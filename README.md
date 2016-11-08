@@ -21,12 +21,41 @@ api/feiraslivre/?NOME_FEIRA=[nomefeira]
 api/feiraslivre/?BAIRRO=[bairro]?DISTRITO=[distrito]?REGIAO5=[regiao5]?NOME_FEIRA=[nomefeira]
 
 <i>GET (REGISTRO)</i>
+api/feiraslivre/123
 
 <i>POST</i>
+api/feiraslivre/ (POST , Content-Type : Application/Json)
+{
+            "BAIRRO": "POMPEIA",
+            "DISTRITO": "",
+            "LOGRADOURO": "RUA XPTO",
+            "NOME_FEIRA": "FEIRA XPTO",
+            "NUMERO": "",
+            "REFERENCIA": "IGREJA POMPEIA",
+            "REGIAO5": "",
+            "REGIAO8": "",
+            "REGISTRO": "reg12345",
+            "SUBPREFE": "",
+}
 
 <i>PUT</i>
+api/feiraslivre/ (POST , Content-Type : Application/Json)
+{ 
+            "ID" : "123"
+            "BAIRRO": "POMPEIA",
+            "DISTRITO": "",
+            "LOGRADOURO": "RUA XPTO",
+            "NOME_FEIRA": "FEIRA XPTO",
+            "NUMERO": "",
+            "REFERENCIA": "IGREJA POMPEIA",
+            "REGIAO5": "",
+            "REGIAO8": "",
+            "REGISTRO": "reg12345",
+            "SUBPREFE": "",
+}
 
 <i>DELETE</i>
+api/feiraslivre/123  (HTTP : DELETE )
 
 <h2> Para rodar os testcases </h2> 
 python -m unittest -v
