@@ -7,11 +7,17 @@ API
 </h2>
 <b>FeiraLivreResource (api/api.py)</b>
 <i>GET (ALL / FILTERED)</i>
+<br>
 api/feiraslivre
+<br>
 api/feiraslivre/?BAIRRO=[bairro]
+<br>
 api/feiraslivre/?DISTRITO=[distrito]
+<br>
 api/feiraslivre/?REGIAO5=[regiao5]
+<br>
 api/feiraslivre/?NOME_FEIRA=[nomefeira]
+<br>
 api/feiraslivre/?BAIRRO=[bairro]?DISTRITO=[distrito]?REGIAO5=[regiao5]?NOME_FEIRA=[nomefeira]
 
 <i>GET (REGISTRO)</i>

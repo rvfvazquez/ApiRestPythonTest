@@ -38,7 +38,4 @@ superuser
 *************************************************
 api@api.com.br
 usuario : api
-password : api12345*************************************************
-api@api.com.br
-usuario : api
 password : api12345
