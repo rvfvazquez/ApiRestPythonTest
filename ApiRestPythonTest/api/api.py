@@ -14,16 +14,21 @@ from django_filters.rest_framework import FilterSet
 from rest_framework import generics
 import django_filters
 from django.core.exceptions import ObjectDoesNotExist
+from tastypie.authorization import DjangoAuthorization
+from tastypie.authorization import Authorization
+from tastypie.authentication import BasicAuthentication
 import logging
 
 class FeiraLivreResource(ModelResource):
     class Meta:
         queryset = FeiraLivre.objects.all()
         resource_name = 'feiraslivre'
+        authentication = BasicAuthentication()
+        authorization = DjangoAuthorization()
 
         fields = ['ID','LONG','LAT','SETCENS','AREAP', 'CODDIST' , 'DISTRITO' , 'CODSUBPREF' , 'SUBPREFE' , 'REGIAO5' , 'REGIAO8' , 'NOME_FEIRA' ,'REGISTRO' , 'LOGRADOURO' , 'NUMERO' ,'BAIRRO' ,'REFERENCIA']
         allowed_methods = ['get', 'post', 'put', 'delete']
-        list_allowed_methods = ['get', 'post']
+        list_allowed_methods = ['get', 'post', 'put', 'delete']
         detail_allowed_methods = ['get', 'post', 'put', 'delete']
         filtering = {
             'DISTRITO': ['exact', 'range', 'gt', 'gte', 'lt', 'lte'],
