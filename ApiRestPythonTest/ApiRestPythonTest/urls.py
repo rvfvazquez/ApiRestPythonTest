@@ -3,10 +3,15 @@ Definition of urls for ApiRestPythonTest.
 """
 
 from datetime import datetime
-from django.conf.urls import url
+from django.conf.urls import url, include
 import django.contrib.auth.views
-
 from rest_framework_swagger.views import get_swagger_view
+
+
+from api.api import FeiraLivreResource
+
+feiralivre_resource = FeiraLivreResource()
+
 
 schema_view = get_swagger_view(title='API Feiras Livres')
 
@@ -21,7 +26,9 @@ import app.views
 
 urlpatterns = [
     # Examples:
+    url(r'^api/', include(feiralivre_resource.urls)),
     url(r'^swagger$', schema_view) , 
+    
     url(r'^$', app.views.home, name='home'),
     url(r'^contact$', app.views.contact, name='contact'),
     url(r'^about', app.views.about, name='about'),
@@ -52,8 +59,16 @@ urlpatterns = [
     # url(r'^admin/', include(admin.site.urls)),
 ]
 
+"""
+from rest_framework import routers
 
+from api.views import FeiraLivreViewSet
+router = routers.DefaultRouter()
 
+router.register(r'feiraslivres', FeiraLivreViewSet)
+
+urlpatterns += router.urls
+"""
 
 """
 from rest_framework import routers

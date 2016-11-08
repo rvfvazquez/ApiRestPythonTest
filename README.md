@@ -2,19 +2,25 @@
 ApiRestPythonTest
 
 
-<h1>
-api
-</h1>
-api/views.py
-	- FeiraLivreViewSet
+<h2>
+API
+</h2>
+<b>FeiraLivreResource (api/api.py)</b>
+<i>GET (ALL / FILTERED)</i>
+api/feiraslivre
+api/feiraslivre/?BAIRRO=[bairro]
+api/feiraslivre/?DISTRITO=[distrito]
+api/feiraslivre/?REGIAO5=[regiao5]
+api/feiraslivre/?NOME_FEIRA=[nomefeira]
+api/feiraslivre/?BAIRRO=[bairro]?DISTRITO=[distrito]?REGIAO5=[regiao5]?NOME_FEIRA=[nomefeira]	
 
-<h1> Para rodar os testcases </h1> 
+<h2> Para rodar os testcases </h2> 
 python -m unittest -v
 
-<h1> Para Verificicar a cobertura de testes , rodar o coverage report </h1>
+<h2> Para Verificicar a cobertura de testes , rodar o coverage report </h2>
 coverage report
 
-<h1>Documentação da API REST</h1>
+<h2>Documentação da API REST</h2>
 /swagger
 
 

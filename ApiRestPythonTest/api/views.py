@@ -7,7 +7,10 @@ from rest_framework import status
 from rest_framework import renderers
 from rest_framework import viewsets
 from django_filters.rest_framework import DjangoFilterBackend
-from django_filters.rest_framework import OrderingFilter
+from django_filters.rest_framework import FilterSet
+from rest_framework import generics
+import django_filters
+from django.core.exceptions import ObjectDoesNotExist
 
 import logging
 
@@ -17,32 +20,35 @@ logger = logging.getLogger(__name__)
 
 class FeiraLivreViewSet(viewsets.ViewSet):
 
-    filter_backends = (OrderingFilter,)
-    ordering_fields = ('DISTRITO', 'REGIAO5', 'NOME_FEIRA', 'BAIRRO' )
+    #filter_backends = (filters.SearchFilter,)
+    #search_fields  = ('DISTRITO', 'REGIAO5', 'NOME_FEIRA', 'BAIRRO' )
 
     """
     Listar Todas as Feiras Livres
     """
     def list(self, request):
-        feiras = FeiraLivre.objects.all()
-        serializer = FeiraSerializer(feiras, many=True)
-        return Response(serializer.data)
+        pass
+        #feiras = FeiraLivre.objects.all()
+        #serializer = FeiraSerializer(feiras, many=True)
+        #return Response(serializer.data)
 
     """
     Criar nova feira Livre
     """
     def create(self, request):
-        serializer = SnippetSerializer(data=request.data)
-        if serializer.is_valid():
-            serializer.save()
-            return Response(serializer.data, status=status.HTTP_201_CREATED)
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+        pass
+        #serializer = SnippetSerializer(data=request.data)
+        #if serializer.is_valid():
+        #    serializer.save()
+        #    return Response(serializer.data, status=status.HTTP_201_CREATED)
+        #return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
     """
     Atualiza feira Livre
     """
     def update(self, request, registro):
-        feira = self.get_object(registro)
+        pass
+        """feira = self.get_object(registro)
         serializer = FeiraSerializer(feira, data=request.data)
         if serializer.is_valid():
             serializer.save()
@@ -50,7 +56,7 @@ class FeiraLivreViewSet(viewsets.ViewSet):
 
 
         logger.error('BAD REQUEST!')
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)"""
 
     """
     remove feira Livre

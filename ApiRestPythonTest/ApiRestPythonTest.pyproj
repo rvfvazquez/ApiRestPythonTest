@@ -30,6 +30,9 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="api\admin.py" />
+    <Compile Include="api\api.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="api\apps.py" />
     <Compile Include="api\migrations\__init__.py" />
     <Compile Include="api\models.py" />

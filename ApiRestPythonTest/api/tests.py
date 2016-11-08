@@ -14,36 +14,37 @@ class SimpleTest(TestCase):
     """Tests for the application views."""
 
     # Django requires an explicit setup() when running tests in PTVS
-    @classmethod
-    def setUpClass(cls):
-        django.setup()
-
-    def test_basic_addition(self):
-        """
-        Tests that 1 + 1 always equals 2.
-        """
-        self.assertEqual(1 + 1, 2)
+    if django.VERSION[:2] >= (1, 7):
+        # Django 1.7 requires an explicit setup() when running tests in PTVS
+        @classmethod
+        def setUpClass(cls):
+            super(ViewTest, cls).setUpClass()
+            django.setup()
 
     def test_post_feiralivre(self):
         """
         Tests POST Feira Livre
         """
-        self.assertEqual(1 + 1, 2)
+        response = self.client.get('/')
+        self.assertContains(response, 'Home Page', 1, 200)
 
     def test_put_feiralivre(self):
         """
         Tests Put Feira Livre
         """
-        self.assertEqual(1 + 1, 2)
+        response = self.client.get('/api/feiraslivres')
+        self.assertContains(response, 'Home Page', 1, 200)
 
     def test_get_feiralivre(self):
         """
         Tests Get Feira Livre
         """
-        self.assertEqual(1 + 1, 2)
+        response = self.client.get('/api/feiraslivres')
+        self.assertContains(response, 'Home Page', 1, 200)
 
     def test_getALL_feiralivre(self):
         """
         Tests GetALL Feira Livre
         """
-        self.assertEqual(1 + 1, 2)
+        response = self.client.get('/api/feiraslivres')
+        self.assertContains(response, 'Home Page', 1, 200)

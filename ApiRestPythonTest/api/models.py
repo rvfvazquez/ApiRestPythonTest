@@ -20,13 +20,12 @@ class FeiraLivre(models.Model):
     BAIRRO      = models.CharField(db_index=True,max_length=150)
     REFERENCIA  = models.CharField(max_length=45)
 
-    def __init__(self):
-            models.Model.__init__(self)
 
-    def __init__(self, REGISTRO):
-            models.Model.__init__(self)
-            self.REGISTRO = REGISTRO
 
+    def save(self, *args, **kwargs):
+            return super(FeiraLivre, self).save(*args, **kwargs)
+
+    
     def __str__(self): 
         return self.REGISTRO + self.NOME_FEIRA
             
