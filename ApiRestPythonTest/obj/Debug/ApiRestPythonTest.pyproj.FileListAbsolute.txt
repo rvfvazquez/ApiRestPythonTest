@@ -1,0 +1,13 @@
+C:\Users\rvfva\OneDrive\Projetos\ApiRestPythonTest\ApiRestPythonTest\bin\Microsoft.PythonTools.WebRole.dll
+C:\Users\rvfva\OneDrive\Projetos\ApiRestPythonTest\ApiRestPythonTest\obj\Debug\attach_server.py
+C:\Users\rvfva\OneDrive\Projetos\ApiRestPythonTest\ApiRestPythonTest\obj\Debug\visualstudio_py_debugger.py
+C:\Users\rvfva\OneDrive\Projetos\ApiRestPythonTest\ApiRestPythonTest\obj\Debug\visualstudio_py_repl.py
+C:\Users\rvfva\OneDrive\Projetos\ApiRestPythonTest\ApiRestPythonTest\obj\Debug\visualstudio_py_util.py
+C:\Users\rvfva\OneDrive\Projetos\ApiRestPythonTest\ApiRestPythonTest\obj\Debug\__init__.py
+C:\Users\rvfva\OneDrive\Projetos\ApiRestPythonTest\ApiRestPythonTest\obj\Debug\__main__.py
+C:\Users\rvfva\OneDrive\Projetos\ApiRestPythonTest\ApiRestPythonTest\bin\AzureSetup.cfg
+C:\Users\rvfva\OneDrive\Projetos\ApiRestPythonTest\ApiRestPythonTest\bin\Microsoft.PythonTools.AzureSetup.exe
+C:\Users\rvfva\OneDrive\Projetos\ApiRestPythonTest\ApiRestPythonTest\bin\Microsoft.PythonTools.AzureSetup.exe.config
+C:\Users\rvfva\OneDrive\Projetos\ApiRestPythonTest\ApiRestPythonTest\bin\wfastcgi.py
+C:\Users\rvfva\OneDrive\Projetos\ApiRestPythonTest\ApiRestPythonTest\obj\Debug\web.config
+C:\Users\rvfva\OneDrive\Projetos\ApiRestPythonTest\ApiRestPythonTest\obj\Debug\web.debug.config
