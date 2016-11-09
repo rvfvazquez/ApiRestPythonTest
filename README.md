@@ -52,7 +52,7 @@ api/feiraslivre/ (POST , Content-Type : Application/Json)
 
 <i><b>PUT</b></i>
 <br>
-api/feiraslivre/reg12345 (PUT , Content-Type : Application/Json)
+api/feiraslivre/[registro/ (PUT , Content-Type : Application/Json)
 <br>
 { 
             "ID" : "123"
