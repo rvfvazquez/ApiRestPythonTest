@@ -72,7 +72,6 @@ class FeiraLivreResource(ModelResource):
             feiralivre.NOME_FEIRA =    bundle.data["NOME_FEIRA"]
             feiralivre.save()
             bundle.obj = feiralivre
-            
         except KeyError:
             raise Http404
 

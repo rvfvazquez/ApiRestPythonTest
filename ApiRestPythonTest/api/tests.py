@@ -9,8 +9,10 @@ import django
 from django.test import TestCase
 from requests.auth import HTTPBasicAuth
 from django.contrib.auth import login
+from django.contrib.auth.models import User
 from requests.auth import HTTPBasicAuth
 from django import shortcuts
+from django.test import Client
 import requests
 
 # TODO: Configure your database in settings.py and sync before running tests.
@@ -45,7 +47,13 @@ class ApiTest(TestCase):
                         "SUBPREFE": "",
                         "resource_uri": "/api/feiraslivre/2/"
                     }
-        self.client.login(username='api', password='api12345')
+        username='api'
+        password='api12345'
+        self.client = Client()
+        #loggedin = self.client.login(email="api@api.com.br", password="api12345")
+        loggedin = self.client.force_login(User.objects.get_or_create(username='testuser')[0])
+        self.assertTrue(loggedin, "falha ao logar")
+        
         response = self.client.post('/api/feiraslivre/',mensagem , content_type = 'application/json',follow = True)
         self.assertContains(response, 'REGISTRO', 1, 200)
         self.assertTrue(True,"TestePOST")
@@ -68,16 +76,28 @@ class ApiTest(TestCase):
                         "SUBPREFE": "",
                         "resource_uri": "/api/feiraslivre/2/"
                     }
-        self.client.login(username='api', password='api12345')
+        username='api'
+        password='api12345'
+        self.client = Client()
+        #loggedin = self.client.login(email="api@api.com.br", password="api12345")
+        loggedin = self.client.force_login(User.objects.get_or_create(username='testuser')[0])
+        self.assertTrue(loggedin, "falha ao logar")
+        
         response = self.client.put('/api/feiraslivre/reg12345/', mensagem , content_type = 'application/json',follow = True)
-        #self.assertContains(response, 'REGISTRO', 1, 200)
+        self.assertNotContains(response, 'REGISTRO',204)
         self.assertTrue(True,"TestePUT")
 
     def test_get_feiralivre(self):
         """
         Tests Get Feira Livre
         """
-        self.client.login(username='api', password='api12345')
+        username='api'
+        password='api12345'
+        self.client = Client()
+        #loggedin = self.client.login(email="api@api.com.br", password="api12345")
+        loggedin = self.client.force_login(User.objects.get_or_create(username='testuser')[0])
+        self.assertTrue(loggedin, "falha ao logar")
+        
         response = self.client.get('/api/feiraslivre/reg12345/',follow = True)
         self.assertContains(response, 'REGISTRO', 1, 200)
         self.assertTrue(True,"TesteGeT")
@@ -86,11 +106,14 @@ class ApiTest(TestCase):
         """
         Tests GetALL Feira Livre
         """
-        self.client.login(username='api', password='api12345')
+        #self.client.login(username='api', password='api12345')
         username='api'
         password='api12345'
-        auth = HTTPBasicAuth(username, password)
-        #response = requests.get('http://localhost:56162/api/feiraslivres/', auth=auth)
+        self.client = Client()
+        
+        #loggedin = self.client.login(email="api@api.com.br", password="api12345")
+        loggedin = self.client.force_login(User.objects.get_or_create(username='testuser')[0])
+        self.assertTrue(loggedin, "falha ao logar")
         response = self.client.get('/api/feiraslivre/', follow=True)
-        self.assertContains(response, 'REGISTRO', 1, 200)
+        self.assertContains(response, 'REGISTRO', None, 200)
         self.assertTrue(True,"TesteGeTALL")
