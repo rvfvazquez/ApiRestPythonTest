@@ -73,10 +73,10 @@ api/feiraslivre/[registro]/ (PUT , Content-Type : Application/Json)
 api/feiraslivre/[registro]/  (HTTP : DELETE )
 
 <h2> Para rodar os testcases </h2> 
-python -m unittest -v
+python manage.py test
 
 <h2> Para Verificicar a cobertura de testes , rodar o coverage report </h2>
-coverage run -m
+coverage run manage.py test
 coverage report
 
 <h2>Documentação da API REST</h2>
