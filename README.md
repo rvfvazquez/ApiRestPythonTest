@@ -31,7 +31,7 @@ api/feiraslivre/?BAIRRO=[bairro]?DISTRITO=[distrito]?REGIAO5=[regiao5]?NOME_FEIR
 
 <i><b>GET (REGISTRO)</b></i>
 <br>
-api/feiraslivre/123
+api/feiraslivre/reg12345
 
 <i><b>POST</b></i>
 <br>
@@ -52,7 +52,7 @@ api/feiraslivre/ (POST , Content-Type : Application/Json)
 
 <i><b>PUT</b></i>
 <br>
-api/feiraslivre/ (POST , Content-Type : Application/Json)
+api/feiraslivre/reg12345 (PUT , Content-Type : Application/Json)
 <br>
 { 
             "ID" : "123"
