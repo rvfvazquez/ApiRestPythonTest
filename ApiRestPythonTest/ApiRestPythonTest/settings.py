@@ -133,3 +133,22 @@ REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': ( 'rest_framework.permissions.AllowAny',)
 }
 #'DEFAULT_FILTER_BACKENDS': ('django_filters.rest_framework.DjangoFilterBackend',)
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'file': {
+            'level': 'DEBUG',
+            'class': 'logging.FileHandler',
+            'filename': 'api.debug.log',
+        },
+    },
+    'loggers': {
+        'backend': {
+            'handlers': ['file'],
+            'level': 'DEBUG',
+            'propagate': True,
+        },
+    },
+}
