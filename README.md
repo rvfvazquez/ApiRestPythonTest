@@ -82,6 +82,9 @@ coverage report
 <h2>Documentação da API REST</h2>
 /swagger
 
+<h2>LOGGING</h2>
+api.debug.log
+
 
 ***********************************************
 superuser
