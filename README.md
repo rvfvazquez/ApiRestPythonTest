@@ -17,7 +17,7 @@ password : api12345
 
 <i><b>GET (ALL / FILTERED)</b></i>
 <br>
-api/feiraslivre
+api/feiraslivre/
 <br>
 api/feiraslivre/?BAIRRO=[bairro]
 <br>
@@ -31,7 +31,7 @@ api/feiraslivre/?BAIRRO=[bairro]?DISTRITO=[distrito]?REGIAO5=[regiao5]?NOME_FEIR
 
 <i><b>GET (REGISTRO)</b></i>
 <br>
-api/feiraslivre/reg12345
+api/feiraslivre/[registro]/
 
 <i><b>POST</b></i>
 <br>
@@ -52,7 +52,7 @@ api/feiraslivre/ (POST , Content-Type : Application/Json)
 
 <i><b>PUT</b></i>
 <br>
-api/feiraslivre/[registro/ (PUT , Content-Type : Application/Json)
+api/feiraslivre/[registro]/ (PUT , Content-Type : Application/Json)
 <br>
 { 
             "ID" : "123"
@@ -70,7 +70,7 @@ api/feiraslivre/[registro/ (PUT , Content-Type : Application/Json)
 
 <i><b>DELETE</b></i>
 <br>
-api/feiraslivre/123  (HTTP : DELETE )
+api/feiraslivre/[registro]/  (HTTP : DELETE )
 
 <h2> Para rodar os testcases </h2> 
 python -m unittest -v
