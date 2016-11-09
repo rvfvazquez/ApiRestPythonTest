@@ -62,25 +62,22 @@ class FeiraLivreResource(ModelResource):
         try:
             feiralivre = FeiraLivre.objects.get(REGISTRO = kwargs['pk']) 
             feiralivre.REFERENCIA =    bundle.data["REFERENCIA"]
+            feiralivre.BAIRRO     =    bundle.data["BAIRRO"]
+            feiralivre.DISTRITO   =    bundle.data["DISTRITO"]
+            feiralivre.LOGRADOURO =    bundle.data["LOGRADOURO"]
+            feiralivre.NUMERO     =    bundle.data["NUMERO"]
+            feiralivre.REGIAO5    =    bundle.data["REGIAO5"]
+            feiralivre.REGIAO8    =    bundle.data["REGIAO8"]
+            feiralivre.SUBPREFE    =    bundle.data["SUBPREFE"]
+            feiralivre.NOME_FEIRA =    bundle.data["NOME_FEIRA"]
             feiralivre.save()
             bundle.obj = feiralivre
-
-            lookup_kwargs = kwargs.copy()
-            setattr(bundle.obj,self._meta.detail_uri_name, bundle.data[self._meta.detail_uri_name])
-            
-            for key in kwargs.keys():
-                if key == 'pk' or key == 'REGISTRO' or key == 'ID':
-                    continue
-                elif getattr(bundle.obj, key, NOT_AVAILABLE) is not NOT_AVAILABLE:
-                    lookup_kwargs[key] = getattr(bundle.obj, key)
-                else:
-                    del lookup_kwargs[key] 
             
         except KeyError:
             raise Http404
 
         bundle = self.full_hydrate(bundle)
-        data[bundle.obj.ID] = bundle.obj
+        #data[bundle.obj.ID] = bundle.obj
         return bundle
 
     
